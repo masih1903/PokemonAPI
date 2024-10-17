@@ -20,6 +20,10 @@ public class Pokemon {
 
     private String name;
 
+    public Pokemon(String name) {
+        this.name = name;
+    }
+
     public Pokemon(PokemonDTO pokemonDTO) {
 
         this.name = pokemonDTO.getName();
