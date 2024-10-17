@@ -41,12 +41,27 @@ Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
 ### POST example
-POST {{URL}}/hotels
+POST {{URL}}/pokemons
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
 {
-  "name": "Hotel Sunrise",
-  "address": "123 Beach Road"
+  "name": "Masihmon"
 }
+
+###
+
+PUT {{URL}}/pokemons/1284
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+  "name": "Digimon"
+}
+
+###
+
+DELETE {{URL}}/pokemons/1284
+Authorization: Bearer {{jwt_token}}

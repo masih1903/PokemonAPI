@@ -1,6 +1,6 @@
 package app.config;
 
-import app.entities.Hotel;
+import app.entities.Pokemon;
 import app.security.entities.User;
 import app.security.entities.Role;
 import app.utils.ApiProps;
@@ -99,7 +99,7 @@ public class HibernateConfig {
     }
 
     private static void getAnnotationConfiguration(Configuration configuration) {
-        configuration.addAnnotatedClass(Hotel.class);
+        configuration.addAnnotatedClass(Pokemon.class);
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Role.class);
 
