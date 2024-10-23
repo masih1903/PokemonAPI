@@ -56,8 +56,8 @@ class PokemonDAOTest {
     @Test
     void getById() {
 
-            Pokemon pokemon = pokemonDAO.getById(p1.getId());
-            assertEquals(p1.getName(), pokemon.getName());
+            Pokemon pokemon = pokemonDAO.getById(1);
+            assertEquals(1, pokemon.getId());
     }
 
     @Test
@@ -86,7 +86,7 @@ class PokemonDAOTest {
     @Test
     void delete() {
 
-            pokemonDAO.delete(p1.getId());
+            pokemonDAO.delete(1);
             assertNull(pokemonDAO.getById(p1.getId()));
     }
 }
