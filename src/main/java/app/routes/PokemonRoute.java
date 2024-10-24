@@ -6,8 +6,8 @@ import app.daos.PokemonDAO;
 import app.security.enums.Role;
 import io.javalin.apibuilder.EndpointGroup;
 import jakarta.persistence.EntityManagerFactory;
-import static io.javalin.apibuilder.ApiBuilder.*;
 
+import static io.javalin.apibuilder.ApiBuilder.*;
 
 
 public class PokemonRoute {
@@ -19,11 +19,14 @@ public class PokemonRoute {
     public EndpointGroup getPokemonRoutes() {
         return () ->
         {
-            get("/{id}", pokemonController::getById, Role.ANYONE);
-            get("/", pokemonController::getAll, Role.ANYONE );
-            post("/", pokemonController::create, Role.ADMIN);
-            put("/{id}", pokemonController::update, Role.ADMIN);
-            delete("/{id}", pokemonController::delete, Role.ADMIN);
+            path("/auth", () -> {
+
+                get("/{id}", pokemonController::getById, Role.ANYONE);
+                get("/", pokemonController::getAll, Role.ANYONE);
+                post("/", pokemonController::create, Role.ADMIN);
+                put("/{id}", pokemonController::update, Role.ADMIN);
+                delete("/{id}", pokemonController::delete, Role.ADMIN);
+            });
         };
     }
 }
