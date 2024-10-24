@@ -79,7 +79,7 @@ public class HibernateConfig {
             setDeployedProperties(props);
         } else {
             // Fallback to ApiProps if not deployed
-            setDevProperties(props);
+            setDevPropertiesWebServer(props);
         }
     }
 
@@ -89,6 +89,13 @@ public class HibernateConfig {
         props.setProperty("hibernate.connection.url", System.getenv("CONNECTION_STR") + DBName);
         props.setProperty("hibernate.connection.username", System.getenv("DB_USERNAME"));
         props.setProperty("hibernate.connection.password", System.getenv("DB_PASSWORD"));
+    }
+
+    // For web development (e.g., connecting to web server)
+    private static void setDevPropertiesWebServer(Properties props) {
+        props.put("hibernate.connection.url", ApiProps.DB_URL_WEBSERVER);
+        props.put("hibernate.connection.username", ApiProps.DB_USER_WEBSERVER);
+        props.put("hibernate.connection.password", ApiProps.DB_PASS_WEBSERVER);
     }
 
     // For local development (fallback to ApiProps)
