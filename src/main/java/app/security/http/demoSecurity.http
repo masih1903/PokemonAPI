@@ -63,5 +63,5 @@ Authorization: Bearer {{jwt_token}}
 
 ###
 
-DELETE {{URL}}/pokemons/1284
+DELETE {{URL}}/pokemons/1283
 Authorization: Bearer {{jwt_token}}
