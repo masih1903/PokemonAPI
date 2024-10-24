@@ -19,14 +19,13 @@ public class PokemonRoute {
     public EndpointGroup getPokemonRoutes() {
         return () ->
         {
-            path("/auth", () -> {
+
 
                 get("/{id}", pokemonController::getById, Role.ANYONE);
                 get("/", pokemonController::getAll, Role.ANYONE);
                 post("/", pokemonController::create, Role.ADMIN);
                 put("/{id}", pokemonController::update, Role.ADMIN);
                 delete("/{id}", pokemonController::delete, Role.ADMIN);
-            });
         };
     }
 }
