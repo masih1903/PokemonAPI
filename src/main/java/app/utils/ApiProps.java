@@ -5,7 +5,7 @@ public class ApiProps {
     // == HIBERNATE CONFIG FILE ==
     public static final String DB_NAME = "pokemons";
     public static final String DB_USER = "postgres";
-    public static final String DB_PASS = "postgres";
+    public static final String DB_PASS = "cphmk330";
     public static final String DB_URL = "jdbc:postgresql://db:5432/" + DB_NAME;
 
     // == API CONFIG ==
