@@ -78,7 +78,10 @@ public class HibernateConfig {
         if (System.getenv("DEPLOYED") != null && System.getenv("DEPLOYED").equals("true")) {
             setDeployedProperties(props);
         } else {
-            // Fallback to ApiProps if not deployed
+            // Use local development properties
+            //setDevProperties(props);
+
+            // Use web development properties
             setDevPropertiesWebServer(props);
         }
     }
